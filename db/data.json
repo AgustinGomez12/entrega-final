@@ -1,0 +1,47 @@
+[
+    {
+      "dificultad": "facil 1",  
+      "rutina":"fuerza",
+      "pecho":"(flexiones comunes de brazos 10 x 10 ) (flexiones diamante 10 x 10) (flexiones aguantando 5 segundos en lo mas bajo 5 x 10)",
+      "espalda":"Usa una mesa o una silla para sujetarte y levanta tu cuerpo haciendo fuerza con la espalda 5 x 20",
+      "pierna":"sentadillas 5 x 20"
+    },
+
+    {
+      "dificultad":"normal 1",
+       "rutina":"fuerza",
+       "pecho":"(flexiones comunes de brazos 20 x 10) (flexiones diamante 10 x 10)  (flexiones aguantando 15 segundos en lo mas bajo 5 x 10)",
+       "espalda":"Usa una mesa o una silla para sujetarte y levanta tu cuerpo haciendo fuerza con la espalda 5 x 40",
+       "pierna": "sentadillas 5 x 40 "
+    },
+
+    {
+        "dificultad":"dificil 1",
+        "rutina":"fuerza",
+        "pecho":"(flexiones comunes de brazos 20 x 25) (flexiones diamante 10 x 20) (flexiones aguantando 20 segundos en lo mas bajo 10 x 10)",
+        "espalda":"Usa una mesa o una silla para sujetarte y levanta tu cuerpo haciendo fuerza con la espalda 5 x 60",
+        "pierna":"sentadillas 5 x 70 "
+    },
+
+    {
+        "dificultad":"facil 2",
+        "rutina":"cardio",
+        "burpies":"10 burpies 5 veces",
+        "saltos":"saltos tijeras 1 minuto 5 veces"
+    },
+    
+    {
+        "dificultad":"normal 2",
+        "rutina":"cardio",
+        "burpies":"20 burpies 5 veces",
+        "saltos":"saltos tijeras 1:30 minutos 5 veces \n mountain climbers 1:30 minutos 5 veces "
+    },
+
+    {
+        "dificultad":"dificil 2",
+        "rutina":"cardio",
+        "burpies":"40 burpies 5 veces con descansos solo de un minuto",
+        "saltos":"saltos tijeras 2:30 minutos 5 veces \n mountain climbers 2:30 minutos 5 veces "
+    }
+    
+]

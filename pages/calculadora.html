@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/style.css">
+    <!--JS-->
+    <script defer src="../js/calculadora.js"></script>
+    <title>Calculadora</title>
+
+</head>
+
+<body>
+    <!--Header comienzo-->
+    <header>
+        <!--DIBUJO CALCULADORA COMIENZO-->
+        <div class="contenedor-logo">
+            <div class="pantalla">
+                <p class="parrafo-calculadora">
+                    Power = 💪
+                </p>
+            </div>
+            <div class="contenedor-bones-calculadora">
+                <div class="bontones">
+
+                </div>
+                <div class="bontones">
+
+                </div>
+                <div class="bontones">
+
+                </div>
+                <div class="bontones">
+
+                </div>
+
+            </div>
+            <a href=""></a>
+        </div>
+        <!--DIBUJO CALCULADORA FINAL-->
+
+        <!--TITULO PRINCIPAL COMIENZO-->
+        <div class="titulo">
+            <h1>
+                FIT MEDITION
+            </h1>
+        </div>
+        <!--TITULO PRINCIPAL FINAL-->
+
+        <!--MENU DE NAVEGACION-->
+        <div class="container-menunav">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./rutinas.html">
+                            rutinas
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--MENU DE NAVEGACION-->
+    </header>
+    <!--Header final-->
+
+    <!--Main comienzo-->
+    <main class="main-calculadora" id="mainCalculadora">
+        <div class="container-instrucciones">
+            <h2 id="activarInstrcciones">
+                instrucciones
+            </h2>
+        </div>
+
+        <div class="menu-logear" id="menuLogear">
+            <div class="contet-logoregistro" id="menuContenedorInfo">
+                <p>
+                    👤
+                </p>
+            </div>
+            <div class="circulo-img">
+                <div class="figura">
+                    <div class="cabeza-figura">
+
+                    </div>
+                    <div class="cuerpo-figura">
+
+                    </div>
+
+                    <div class="container-boton">
+                        <button id="botonSalir">
+                            salir
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            
+            
+        </div>
+
+        <div class="calculadora-container" id="formContainer">
+
+            <div class="titulo-calculadora">
+                <h2>
+                    Calculadora
+                </h2>
+            </div>
+
+            <label for="altura" class="calculadora-imc">
+                <h2>
+                    Calcular IMC
+                </h2>
+                <h2>
+                    ¿Cuanto mides?
+                </h2>
+                <input type="text" id="altura">
+                <h2>
+                    ¿Cuanto pesas?
+                </h2>
+                <input type="text" id="peso">
+                <h2>
+                    Resultado
+                </h2>
+                <input disabled type="text" id="resultadoIMC">
+                <h2>
+                    Resultado estado de salud
+                </h2>
+                <input disabled type="text" id="resultadoEstadoSalud">
+            </label>
+
+            <label for="tasa-metabolica" class="tasa-metabolicabz">
+                <h2>
+                    Calcular calorias diarias
+                </h2>
+                <h2>
+                    ¿Como definirias tu actividad diaria?
+                </h2>
+
+                <select name="actividad" id="actividad">
+                    <option value="">
+                        Seleccione
+                    </option>
+                    <option value="1">
+                        1 Sedentario 😪
+                    </option>
+                    <option value="2">
+                        2 Leve 😀
+                    </option>
+                    <option value="3">
+                        3 Media 😠
+                    </option>
+                    <option value="4">
+                        4 Fuerte 😡
+                    </option>
+                    <option value="5">
+                        5 Muy fuerte 💀
+                    </option>
+                </select>
+                <h2>
+                    Resultado
+                </h2>
+                <input disabled type="text" id="resultadoBasal">
+            </label>
+
+            <label for="proteinas-diarias" class="proteinas-diariasmh">
+                <h2>
+                    Calcular proteinas diarias
+                </h2>
+                <select name="seleccionar-sexo" id="seleccionarSexo">
+                    <option value="">
+                        Seleccione
+                    </option>
+                    <option value="mujer">
+                        Mujer 👩‍💼
+                    </option>
+                    <option value="hombre">
+                        Hombre 👨‍💼
+                    </option>
+                    <h2>
+                        Resultado
+                    </h2>
+                    <input disabled type="text" id="resulatadoProteina">
+                </select>
+            </label>
+            <div class="container-botones" id="containerBotonesCalGuar">
+                <button id="botonCalcular">
+                    Calcular
+                </button>
+            </div>
+
+
+        </div>
+
+        <div class="fit-Doctor" id="fitDoctor">
+            <ul>
+                <li>
+                    <p>
+                        👨‍⚕️
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <!--Main final-->
+
+    <!--Inicio del footer-->
+    <footer>
+
+        <div class="content-derechos">
+            <p class="derechos">
+                Todos los derechos resevados a fit medition
+            </p>
+        </div>
+        <div class="container-emojis">
+            <h2>
+                💪
+            </h2>
+
+            <h2>
+                🏋️‍♂️
+            </h2>
+
+            <h2>
+                🧘‍♂️
+            </h2>
+        </div>
+    </footer>
+    <!--Final del footer-->
+
+    <!--SweetAlert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

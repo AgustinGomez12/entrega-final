@@ -1,0 +1,751 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+@keyframes cambios-de-color-header {
+  0% {
+    background-color: red;
+  }
+  20% {
+    background-color: rgb(158, 5, 5);
+  }
+  40% {
+    background-color: rgb(130, 5, 5);
+  }
+  60% {
+    background-color: red;
+  }
+  80% {
+    background-color: rgb(81, 7, 7);
+  }
+  100% {
+    background-color: red;
+  }
+}
+@keyframes vibracion-logos {
+  0% {
+    rotate: 0deg;
+  }
+  20% {
+    rotate: 10deg;
+  }
+  40% {
+    rotate: -10deg;
+  }
+  60% {
+    rotate: 10deg;
+  }
+  80% {
+    rotate: -10deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+@keyframes mover-fondomenu {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+@font-face {
+  font-family: letras-titulos-enlaces;
+  src: url(../fonts/BebasNeue-Regular.ttf);
+}
+h2 {
+  font-family: letras-titulos-enlaces;
+  color: rgb(220, 228, 235);
+  font-size: 45px;
+}
+
+h3 {
+  font-family: letras-titulos-enlaces;
+  color: rgb(220, 228, 235);
+}
+
+label {
+  font-family: letras-titulos-enlaces;
+  color: aliceblue;
+  font-size: 30px;
+}
+
+button {
+  width: 120px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: black;
+  color: aliceblue;
+  font-family: letras-titulos-enlaces;
+  font-size: 20px;
+}
+
+input {
+  height: 50px;
+  border-radius: 10px;
+  margin: 10px 0 0 0px;
+  font-family: letras-titulos-enlaces;
+  font-size: 30px;
+}
+input:hover {
+  border: solid red 1px;
+}
+
+p {
+  font-family: letras-titulos-enlaces;
+  font-size: 30px;
+  color: aliceblue;
+}
+
+main {
+  background: linear-gradient(90deg, rgb(98, 18, 18), rgb(24, 10, 10));
+  width: 100%;
+  height: 100%;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .container-reg-log {
+  display: flex;
+  background: linear-gradient(90deg, rgb(216, 66, 66), rgb(143, 9, 9));
+  padding: 20px;
+  border-radius: 10px;
+}
+main .container-reg-log h2 {
+  display: flex;
+  justify-content: center;
+}
+main .container-reg-log .content-nombre {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+main .container-reg-log .content-nombre input {
+  width: 80%;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+main .container-reg-log .content-email {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+main .container-reg-log .content-email input {
+  width: 80%;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+main .container-reg-log .content-pasword {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+main .container-reg-log .content-pasword input {
+  width: 80%;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+main .container-reg-log .content-button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+main .container-reg-log .content-button button {
+  background: linear-gradient(90deg, rgb(117, 64, 64), rgb(34, 31, 31));
+}
+main .container-reg-log .content-button button:hover {
+  background: linear-gradient(90deg, rgb(138, 64, 64), rgb(114, 41, 41));
+  cursor: pointer;
+}
+main .container-reg-log .contentlog-olvide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+main .container-reg-log .contentlog-olvide a {
+  text-decoration: none;
+  color: black;
+}
+main .container-reg-log .style-incompleto {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: blue;
+}
+
+header {
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0.305), rgba(0, 0, 0, 0.405));
+  width: 100%;
+  height: 250px;
+  animation-name: cambios-de-color-header;
+  animation-duration: 10s;
+  position: relative;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+}
+header .contenedor-logo {
+  width: 140px;
+  height: 160px;
+  background-color: cadetblue;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 0 rgb(43, 40, 40);
+  border: solid rgb(58, 56, 56);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  rotate: 10deg;
+}
+header .contenedor-logo .parrafo-calculadora {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: aliceblue;
+  font-size: 20px;
+}
+header .contenedor-logo .pantalla {
+  width: 80%;
+  height: 50px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.711), rgba(255, 255, 255, 0.631));
+  border-radius: 10px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .contenedor-logo .contenedor-bones-calculadora {
+  width: 82%;
+  height: 50%;
+  border: solid black 1px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(90deg, rgba(0, 0, 255, 0.221), rgba(0, 128, 0, 0.311));
+}
+header .contenedor-logo .contenedor-bones-calculadora .bontones {
+  width: 20px;
+  height: 18px;
+  background: linear-gradient(360deg, rgba(68, 67, 67, 0.709), rgba(116, 113, 113, 0.819));
+  border-radius: 5px;
+  box-shadow: 0 23px 0 rgb(112, 108, 108), 0 45px 0 rgb(112, 108, 108);
+  margin: 3px;
+}
+header .titulo {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  font-family: letras-titulos-enlaces;
+  font-size: 30px;
+  color: aliceblue;
+  font-style: italic;
+  text-decoration: underline;
+}
+header .content-nav {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  top: 250px;
+  background-color: rgba(165, 42, 42, 0.479);
+}
+header .content-nav a {
+  list-style: none;
+  text-decoration: none;
+  color: aliceblue;
+  font-family: letras-titulos-enlaces;
+  font-size: 40px;
+}
+header .content-nav a:hover {
+  color: violet;
+}
+header .container-menunav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: -40px;
+  z-index: 1;
+  background: linear-gradient(90deg, rgb(60, 255, 0), red);
+}
+header .container-menunav a {
+  text-decoration: none;
+  font-family: letras-titulos-enlaces;
+  font-size: 40px;
+  color: violet;
+}
+
+footer {
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0.305), rgba(0, 0, 0, 0.405));
+  width: 100%;
+  height: 250px;
+  animation-name: cambios-de-color-header;
+  animation-duration: 10s;
+  position: relative;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+}
+footer .content-derechos {
+  display: flex;
+  align-items: end;
+}
+footer .content-derechos .derechos {
+  font-size: 20px;
+}
+footer .container-emojis {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+footer .container-emojis h2 {
+  font-size: 100px;
+  opacity: 50%;
+}
+
+.main-calculadora {
+  position: relative;
+  overflow: hidden;
+}
+.main-calculadora .container-instrucciones {
+  width: 220px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+.main-calculadora .container-instrucciones h2 {
+  cursor: pointer;
+  position: absolute;
+}
+.main-calculadora .container-instrucciones h2:hover {
+  color: rgb(177, 16, 16);
+}
+.main-calculadora .menu-logear {
+  display: flex;
+  flex-direction: column;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0.582), rgba(207, 129, 12, 0.575), rgba(0, 255, 200, 0.795));
+  position: absolute;
+  background-size: 400% 400%;
+  right: 0;
+  top: 0;
+  transition: 2s;
+  border-radius: 10px 0px 0px 10px;
+  z-index: 2;
+}
+.main-calculadora .menu-logear .boton-oculto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: -44px;
+  background: linear-gradient(90deg, violet, red);
+  border-radius: 10px 0px 0px 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+.main-calculadora .menu-logear .boton-oculto p:hover {
+  animation-name: vibracion-logos;
+  animation-duration: 5s;
+  animation-timing-function: 2s;
+  animation-iteration-count: infinite;
+}
+.main-calculadora .menu-logear .contet-logoregistro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: -44px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(90deg, violet, red);
+  border-radius: 10px 0px 0px 10px;
+  z-index: 2;
+}
+.main-calculadora .menu-logear .contet-logoregistro:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg, red, violet);
+}
+.main-calculadora .menu-logear .contet-logoregistro p:hover {
+  animation-name: vibracion-logos;
+  animation-duration: 5s;
+  animation-timing-function: 2s;
+  animation-iteration-count: infinite;
+}
+.main-calculadora .menu-logear .circulo-img {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+}
+.main-calculadora .menu-logear .circulo-img .figura {
+  display: flex;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 10px;
+}
+.main-calculadora .menu-logear .circulo-img .figura .cabeza-figura {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: aliceblue;
+}
+.main-calculadora .menu-logear .circulo-img .figura .cuerpo-figura {
+  border-radius: 100px 100px 0px 0px;
+  width: 200px;
+  height: 120px;
+  background-color: aliceblue;
+}
+.main-calculadora .menu-logear .nombreuser {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.main-calculadora .menu-logear .container-boton {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.main-calculadora .calculadora-container {
+  width: 600px;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0.808), rgba(0, 128, 0, 0.815));
+}
+.main-calculadora .calculadora-container .titulo-calculadora {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+.main-calculadora .calculadora-container .calculadora-imc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10%;
+}
+.main-calculadora .calculadora-container .tasa-metabolicabz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10%;
+}
+.main-calculadora .calculadora-container .proteinas-diariasmh {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.main-calculadora .calculadora-container .container-botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10%;
+  gap: 10px;
+  position: relative;
+}
+.main-calculadora .fit-Doctor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(90deg, green, white);
+  cursor: pointer;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 1;
+}
+.main-calculadora .fit-Doctor:hover {
+  box-shadow: 0px 0px 10px 10px rgba(0, 255, 0, 0.452);
+}
+.main-calculadora .chat-doc {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 70px;
+  left: 80px;
+  background: linear-gradient(90deg, rgba(0, 255, 0, 0.575), rgba(255, 255, 255, 0.623));
+  border-radius: 150px 150px 150px 0px;
+  height: 500px;
+  width: 500px;
+  gap: 5%;
+}
+.main-calculadora .chat-doc .articular {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  color: black;
+  cursor: pointer;
+}
+.main-calculadora .chat-doc .articular:hover {
+  color: rgba(255, 0, 0, 0.658);
+}
+.main-calculadora .chat-doc .cabeza {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  color: black;
+  cursor: pointer;
+}
+.main-calculadora .chat-doc .cabeza:hover {
+  color: rgba(255, 0, 0, 0.658);
+}
+.main-calculadora .chat-doc .agujeta {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  color: black;
+  cursor: pointer;
+}
+.main-calculadora .chat-doc .agujeta:hover {
+  color: rgba(255, 0, 0, 0.658);
+}
+.main-calculadora .cerrar-doc {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 2;
+  cursor: pointer;
+}
+.main-calculadora .cerrar-doc:hover {
+  box-shadow: 0px 0px 10px 10px rgba(0, 255, 0, 0.452);
+}
+
+.main-rutinas {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  gap: 20px;
+}
+.main-rutinas .container-instrucciones {
+  width: 220px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+.main-rutinas .container-instrucciones h2 {
+  cursor: pointer;
+  position: absolute;
+}
+.main-rutinas .container-instrucciones h2:hover {
+  color: rgb(177, 16, 16);
+}
+.main-rutinas .menu-logear {
+  display: flex;
+  flex-direction: column;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0.582), rgba(207, 129, 12, 0.575), rgba(0, 255, 200, 0.795));
+  position: absolute;
+  background-size: 400% 400%;
+  right: 0;
+  top: 0;
+  transition: 2s;
+  border-radius: 10px 0px 0px 10px;
+  z-index: 2;
+}
+.main-rutinas .menu-logear .boton-oculto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: -44px;
+  background: linear-gradient(90deg, violet, red);
+  border-radius: 10px 0px 0px 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+.main-rutinas .menu-logear .boton-oculto p:hover {
+  animation-name: vibracion-logos;
+  animation-duration: 5s;
+  animation-timing-function: 2s;
+  animation-iteration-count: infinite;
+}
+.main-rutinas .menu-logear .contet-logoregistro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: -44px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(90deg, violet, red);
+  border-radius: 10px 0px 0px 10px;
+  z-index: 2;
+}
+.main-rutinas .menu-logear .contet-logoregistro:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg, red, violet);
+}
+.main-rutinas .menu-logear .contet-logoregistro p:hover {
+  animation-name: vibracion-logos;
+  animation-duration: 5s;
+  animation-timing-function: 2s;
+  animation-iteration-count: infinite;
+}
+.main-rutinas .menu-logear .circulo-img {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+}
+.main-rutinas .menu-logear .circulo-img .figura {
+  display: flex;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 10px;
+}
+.main-rutinas .menu-logear .circulo-img .figura .cabeza-figura {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: aliceblue;
+}
+.main-rutinas .menu-logear .circulo-img .figura .cuerpo-figura {
+  border-radius: 100px 100px 0px 0px;
+  width: 200px;
+  height: 120px;
+  background-color: aliceblue;
+}
+.main-rutinas .menu-logear .nombreuser {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.main-rutinas .titulo-rutinas {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin-right: 30px;
+}
+.main-rutinas .titulo-rutinas h2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.main-rutinas .container-rutinas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  height: 800px;
+  background: linear-gradient(90deg, green, rgba(0, 0, 255, 0.603));
+  border-radius: 20px;
+}
+.main-rutinas .container-selectorrutina {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-rutinas .container-selectorrutina select {
+  padding: 10px;
+  width: 160px;
+  height: 50px;
+  font-family: letras-titulos-enlaces;
+  border-radius: 20px;
+}
+.main-rutinas .container-buttonbuscar {
+  position: relative;
+}
+.main-rutinas .container-buttonbuscar .boton-borrarrutina {
+  position: absolute;
+  top: 0;
+}
+.main-rutinas .container-busqueda {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding-top: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, blue, violet);
+  border-radius: 20px;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.main-rutinas .container-busqueda h2 {
+  display: flex;
+  padding: 10px;
+  font-size: 40px;
+}
+.main-rutinas .container-busqueda .img-instruc {
+  width: 200px;
+}
+.main-rutinas .container-busqueda .h2fuerza {
+  padding-top: 30%;
+}
+
+/*# sourceMappingURL=style.css.map */

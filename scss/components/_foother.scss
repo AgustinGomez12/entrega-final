@@ -1,0 +1,41 @@
+//Estilos de foother
+
+footer {
+    background: linear-gradient(90deg, rgba(255, 0, 0, 0.305), rgba(0, 0, 0, 0.405));
+    width: 100%;
+    height: 250px;
+    animation-name: cambios-de-color-header;
+    animation-duration: 10s;
+    position: relative;
+    animation-direction: normal;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center;
+
+    .content-derechos {
+        display: flex;
+        align-items: end;
+
+        .derechos {
+            font-size: 20px;
+        }
+    }
+
+   
+
+    .container-emojis {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        h2 {
+            font-size: 100px;
+            opacity: 50%;
+        }
+    }
+
+}
