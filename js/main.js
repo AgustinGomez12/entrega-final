@@ -76,7 +76,7 @@ function logiarseUser() {
         switch (password.value && nombreInput.value) {
             case storageRegistro.password && storageRegistro.nombre:
                 let entrar = setTimeout(() => {
-                    window.location.href = "../pages/calculadora.html"
+                    window.location.href = "./pages/calculadora.html"
                 }, 3000)
 
 
