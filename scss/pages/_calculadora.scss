@@ -2,6 +2,8 @@
     position: relative;
     overflow: hidden;
      
+    
+    
     .container-instrucciones{
         width: 220px;
         height: 100px;
@@ -219,6 +221,7 @@
         height: 500px;
         width: 500px;
         gap: 5%;
+        z-index: 1;
         .articular{
             width: 300px;
             display: flex;

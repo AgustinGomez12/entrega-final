@@ -123,6 +123,10 @@ header {
             font-family: letras-titulos-enlaces;
             font-size: 40px;
             color: violet;
+
+            &:hover{
+                color: lime;
+            }
         }
     }
 }

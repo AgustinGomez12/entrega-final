@@ -249,4 +249,77 @@ botonBuscar.onclick = () => {
 }
 //boton para buscar la rutina ⬆⬆
 
+//funcion para generar el chat del doctor ⬇⬇
+const mainRutinas = document.getElementById("main-rutinas")
+const fitDoctor = document.getElementById("fitDoctor")
+function generarChat() {
+  let storageRegistro = localStorage.getItem("usuarioRegistrado")
+  storageRegistro = JSON.parse(storageRegistro)
+  let generarChat = document.createElement("div")
+  generarChat.className = "chat-doc"
+  generarChat.id = "chatDoc"
+  generarChat.innerHTML = `<p id="saludo">hola ${storageRegistro.nombre} ¿en que puedo ayudarte?</p>` +
+    `<p class= "articular" id="dolorArticular">dolores articulares</p>` +
+    `<p class="cabeza" id="dolorCabeza"> dolores de cabeza </p>` +
+    `<p class= "agujeta" id= "dolorAgujeta">agujetas despues de entrenar</p>`
+
+  mainRutinas.appendChild(generarChat)
+  generarChat.style.display = "flex"
+  const saludo = document.getElementById("saludo")
+  const dolorArticular = document.getElementById("dolorArticular")
+  const dolorCabeza = document.getElementById("dolorCabeza")
+  const dolorAgujetas = document.getElementById("dolorAgujeta")
+  dolorArticular.onclick = () => {
+    saludo.style.display = "none"
+    dolorCabeza.style.display = "none"
+    dolorAgujetas.style.display="none"
+
+    dolorArticular.innerHTML = "Haz diariamente estiramientos suaves que muevan tus articulaciones en toda su amplitud de movimiento."+
+    "(para salir pulsa mi icono nuevamente)"  
+  }
+
+  dolorCabeza.onclick = () =>{
+    saludo.style.display = "none"
+    dolorAgujetas.style.display="none"
+    dolorArticular.style.display = "none"
+
+    dolorCabeza.innerHTML ="Toma agua, ya que la mala hidratación puede causar dolor de cabeza,"+
+    "Toma magnesio,Duerme lo suficiente.(para salir pulsa mi icono nuevamente)"
+  }
+
+  dolorAgujetas.onclick = () =>{
+    saludo.style.display = "none"
+    dolorArticular.style.display = "none"
+    dolorCabeza.style.display ="none"
+    dolorAgujetas.innerHTML ="Baño para relajar los músculos Después de una ardua sesión de entrenamiento.Esta es la opción más rápida para disminuir el dolor ocasionado por hacer deporte."+
+    "(para salir pulsa mi icono nuevamente)"
+  }
+}
+//funcion para generar el chat del doctor ⬆⬆
+
+//funcion para cerrar el chat del doctor ⬇⬇
+function cerrarChat() {
+  let cerrar = document.createElement("div")
+  cerrar.className = "cerrar-doc"
+  cerrar.id = "cerrarDoc"
+  mainRutinas.appendChild(cerrar)
+  const eliminar = document.getElementById("cerrarDoc")
+
+  eliminar.onclick = () => {
+    let chatDoc = document.getElementById("chatDoc")
+    chatDoc.remove()
+    eliminar.remove()
+  }
+}
+//funcion para cerrar el chat del doctor ⬆⬆
+
+
+
+//"boton" para abrir y cerrar chat ⬇⬇
+fitDoctor.onclick = () => {
+  generarChat()
+  cerrarChat()
+}
+//"boton" para abrir y cerrar chat ⬆⬆
+
 
