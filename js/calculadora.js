@@ -23,6 +23,7 @@ function ocultarMenuReg() {
   }
 
 }
+
 //Funcion para ocultar el menu ⬆⬆
 
 //Funcion para renderizar al perfil del usuario ⬇⬇
@@ -32,9 +33,42 @@ function renderizarUsuario() {
   let generarNombreUser = document.createElement("div")
   generarNombreUser.innerHTML = `<h2 class="nombreuser">${storageRegistro.nombre}</h2>`
   menuLoger.appendChild(generarNombreUser)
+  
+  let storagefichas = localStorage.getItem("fichaGuardada")
+  storagefichas = JSON.parse(storagefichas)
+  
+  if(storagefichas){
+    let generarContainerFicha = document.createElement("div")
+    generarContainerFicha.className = "fichas-style"
+    generarContainerFicha.innerHTML = `<h2>FICHA GUARDADA:</h2>`+
+                                      `<h2>${storagefichas.imc}</h2>`+
+                                      `<h2>${storagefichas.prosentaje}</h2>`+
+                                      `<h2>${storagefichas.calorias}</h2>`+
+                                      `<h2>${storagefichas.proteinas}</h2>`+
+                                      `<h2>En caso de que el resultado sea viejo recargar</h2>`+
+                                      `<button id="recargarFicha">Recargar</button>`
+    menuLoger.appendChild(generarContainerFicha)
+    const recargarFicha = document.getElementById("recargarFicha")
+    recargarFicha.addEventListener(`click`,() =>{
+     window.location.reload()
+    })
+  }else {
+    let generarContainerFicha = document.createElement("div")
+    generarContainerFicha.className = "fichas-style"
+    generarContainerFicha.innerHTML = `<h2>todavia no se encuentra la fichas en caso 
+                                      de que ya hayas hecho una y no la veas reflejada
+                                      presiona el siguente boton.</h2>`+
+                                      `<button id="recargarFicha">Recargar</button>`
+    menuLoger.appendChild(generarContainerFicha)
+    const recargarFicha = document.getElementById("recargarFicha")
+    recargarFicha.addEventListener(`click`,() =>{
+     window.location.reload()
+    })
+  }
 
 } renderizarUsuario()
 //Funcion para renderizar al perfil del usuario ⬆⬆
+
 
 //Variable del boton para salir de la app ⬇⬇
 let bontonSalir = document.getElementById("botonSalir")
@@ -59,7 +93,7 @@ const activarInstrucciones = document.getElementById("activarInstrcciones")
 activarInstrucciones.onclick = () => {
   let storageRegistro = localStorage.getItem("usuarioRegistrado")
   storageRegistro = JSON.parse(storageRegistro)
-  Swal.fire("hola:" + `${storageRegistro.nombre}` + "\nTe mostraremos como usar la calculadora y que hace:\n1-imc porcentaje de grasa abdominal\n2-Contador de calorias\n3-contador de proteinas\nComo funciona:\nPara un correcto uso no dejes campos libres\ncuando tengas todos los campos llenos dale al boton calcular");
+  Swal.fire("hola:" + `${storageRegistro.nombre}` + "\nTe mostraremos como usar la calculadora y que hace:\n1-imc porcentaje de grasa abdominal\n2-Contador de calorias\n3-contador de proteinas\nComo funciona:\nPara un correcto uso no dejes campos libres\ncuando tengas todos los campos llenos dale al boton calcular\nUna vez que le des a calcular se genenraran dos botones\nGuardar:permite almacenar la ficha en tu perfil.\nReintentar:permite volver a hacer el calculo.");
 }
 
 function Calcular() {
@@ -171,9 +205,58 @@ function Calcular() {
 
 //bonton para calcular ⬇⬇
 const botonCalcular = document.getElementById("botonCalcular")
+const containerBotonesCalGuardar = document.getElementById("containerBotonesCalGuar")
+const containerInfo = document.getElementById("containerInfo")
+
 
 botonCalcular.onclick = () => {
   Calcular()
+
+  //
+  const formContainer = document.getElementById("formContainer")
+  let resultadoIMC = document.getElementById("resultadoIMC")
+  let resultadoPorcentaje = document.getElementById("resultadoEstadoSalud")
+  let resultadoBasal = document.getElementById("resultadoBasal")
+  let resultadoProteina = document.getElementById("resulatadoProteina")
+
+  function generarDivTaparBtn() {
+    let generarDiv = document.createElement("div")
+    generarDiv.className = "div-taparC"
+    generarDiv.id = "divTaparC"
+    formContainer.appendChild(generarDiv)
+  } generarDivTaparBtn()
+
+  class Ficha {
+    constructor(imc, prosentaje, calorias, proteinas) {
+      this.imc = imc
+      this.prosentaje = prosentaje
+      this.calorias = calorias
+      this.proteinas = proteinas
+    }
+  }
+  const fichaCreada = new Ficha(resultadoIMC.value, resultadoPorcentaje.value, resultadoBasal.value, resultadoProteina.value)
+ function btnGenerar () {
+  const botonGuardarFicha = document.createElement("div")
+  const bontonVolverAintentar = document.createElement("div")
+  botonGuardarFicha.className = "boton-guardado"
+  botonGuardarFicha.id = "botonGuardado"
+  botonGuardarFicha.innerHTML = "<button>guardar ficha</button>"
+  bontonVolverAintentar.className = "boton-volverintentar"
+  bontonVolverAintentar.id = "btnVolverIntentar"
+  bontonVolverAintentar.innerHTML = "<button>reintentar</button>"
+  formContainer.appendChild(botonGuardarFicha)
+  formContainer.appendChild(bontonVolverAintentar)
+}btnGenerar()
+const botonGuardado = document.getElementById("botonGuardado")
+botonGuardado.addEventListener(`click`,() =>{
+  localStorage.setItem("fichaGuardada",JSON.stringify(fichaCreada))
+})
+
+const btnVolverIntentar = document.getElementById("btnVolverIntentar")
+btnVolverIntentar.addEventListener(`click`,()=>{
+window.location.reload()
+})
+  //
 }
 //bonton para calcular ⬆⬆
 
@@ -200,27 +283,27 @@ function generarChat() {
   dolorArticular.onclick = () => {
     saludo.style.display = "none"
     dolorCabeza.style.display = "none"
-    dolorAgujetas.style.display="none"
+    dolorAgujetas.style.display = "none"
 
-    dolorArticular.innerHTML = "Haz diariamente estiramientos suaves que muevan tus articulaciones en toda su amplitud de movimiento."+
-    "(para salir pulsa mi icono nuevamente)"  
+    dolorArticular.innerHTML = "Haz diariamente estiramientos suaves que muevan tus articulaciones en toda su amplitud de movimiento." +
+      "(para salir pulsa mi icono nuevamente)"
   }
 
-  dolorCabeza.onclick = () =>{
+  dolorCabeza.onclick = () => {
     saludo.style.display = "none"
-    dolorAgujetas.style.display="none"
+    dolorAgujetas.style.display = "none"
     dolorArticular.style.display = "none"
 
-    dolorCabeza.innerHTML ="Toma agua, ya que la mala hidratación puede causar dolor de cabeza,"+
-    "Toma magnesio,Duerme lo suficiente.(para salir pulsa mi icono nuevamente)"
+    dolorCabeza.innerHTML = "Toma agua, ya que la mala hidratación puede causar dolor de cabeza," +
+      "Toma magnesio,Duerme lo suficiente.(para salir pulsa mi icono nuevamente)"
   }
 
-  dolorAgujetas.onclick = () =>{
+  dolorAgujetas.onclick = () => {
     saludo.style.display = "none"
     dolorArticular.style.display = "none"
-    dolorCabeza.style.display ="none"
-    dolorAgujetas.innerHTML ="Baño para relajar los músculos Después de una ardua sesión de entrenamiento.Esta es la opción más rápida para disminuir el dolor ocasionado por hacer deporte."+
-    "(para salir pulsa mi icono nuevamente)"
+    dolorCabeza.style.display = "none"
+    dolorAgujetas.innerHTML = "Baño para relajar los músculos Después de una ardua sesión de entrenamiento.Esta es la opción más rápida para disminuir el dolor ocasionado por hacer deporte." +
+      "(para salir pulsa mi icono nuevamente)"
   }
 }
 //funcion para generar el chat del doctor ⬆⬆
@@ -249,6 +332,7 @@ fitDoctor.onclick = () => {
   cerrarChat()
 }
 //"boton" para abrir y cerrar chat ⬆⬆
+
 
 
 

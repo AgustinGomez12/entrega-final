@@ -40,6 +40,39 @@ function renderizarUsuario() {
     let generarNombreUser = document.createElement("div")
     generarNombreUser.innerHTML = `<h2 class="nombreuser">${storageRegistro.nombre}</h2>`
     menuLoger.appendChild(generarNombreUser)
+
+    let storagefichas = localStorage.getItem("fichaGuardada")
+    storagefichas = JSON.parse(storagefichas)
+    
+    if(storagefichas){
+      let generarContainerFicha = document.createElement("div")
+      generarContainerFicha.className = "fichas-style"
+      generarContainerFicha.innerHTML = `<h2>FICHA GUARDADA:</h2>`+
+                                        `<h2>${storagefichas.imc}</h2>`+
+                                        `<h2>${storagefichas.prosentaje}</h2>`+
+                                        `<h2>${storagefichas.calorias}</h2>`+
+                                        `<h2>${storagefichas.proteinas}</h2>`+
+                                        `<h2>En caso de que el resultado sea viejo recargar</h2>`+
+                                        `<button id="recargarFicha">Recargar</button>`
+      menuLoger.appendChild(generarContainerFicha)
+      const recargarFicha = document.getElementById("recargarFicha")
+      recargarFicha.addEventListener(`click`,() =>{
+       window.location.reload()
+      })
+    }else {
+      let generarContainerFicha = document.createElement("div")
+      generarContainerFicha.className = "fichas-style"
+      generarContainerFicha.innerHTML = `<h2>todavia no se encuentra la fichas en caso 
+                                        de que ya hayas hecho una y no la veas reflejada
+                                        presiona el siguente boton.</h2>`+
+                                        `<button id="recargarFicha">Recargar</button>`
+      menuLoger.appendChild(generarContainerFicha)
+      const recargarFicha = document.getElementById("recargarFicha")
+      recargarFicha.addEventListener(`click`,() =>{
+       window.location.reload()
+      })
+    }
+
 } renderizarUsuario()
 //Funcion para renderizar al perfil del usuario ⬆⬆
 
